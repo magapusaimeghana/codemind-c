@@ -1,0 +1,29 @@
+#include <stdio.h>
+#include <math.h>
+int length(int n){
+    int l=0;
+    while(n!=0)
+    {
+        l+=1;
+        n/=10;
+    }
+    return l;
+}
+int main()
+{
+    int num,sum=0,rem=0,n;
+    scanf("%d",&num);
+    int len=length(num);
+    n=num;
+    while(num>0)
+    {
+        rem=num%10;
+        sum=sum+(int)pow(rem,len);
+        num/=10;
+        len--;
+    }
+    if(sum==n)
+    printf("True");
+    else
+    printf("False");
+}
